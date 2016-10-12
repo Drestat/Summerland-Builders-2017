@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box; }
+
+h1 {
+  font-size: 40px; }
+
+h2 {
+  font-size: 32px; }
+
+h3 {
+  font-size: 24px; }
+
+h4 {
+  font-size: 18px; }
+
+p {
+  font-size: 16px; }
+
+.button h2, .button h3, .button p {
+  font-size: 20px; 
+  -webkit-transform: 2s; 
+          transform: 2s;
+}

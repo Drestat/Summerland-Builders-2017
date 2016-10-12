@@ -1,1 +1,2 @@
-# Summerland-Builders-2017
+# DevTemplate2016
+Template to start dev projects

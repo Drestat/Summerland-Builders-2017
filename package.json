@@ -1,0 +1,32 @@
+{
+  "name": "devtemplate",
+  "version": "1.0.0",
+  "description": "template to start dev projects",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "clean-css": "^3.4.19",
+    "http-server": "^0.9.0",
+    "jshint": "^2.9.2",
+    "mocha": "^3.0.2",
+    "node-sass": "^3.8.0",
+    "nodemon": "^1.10.0",
+    "uglify-js": "^2.7.1",
+    "watch": "^0.19.2"
+  },
+  "scripts": {
+    "info": "echo 'template to start dev projects'",
+    "lint": "echo '=> linting' && jshint assets/scripts/*.js",
+    "test": "echo '=> testing' && mocha test/",
+    "server": "http-server dist/public/",
+    "minify:js": "echo '=> minify:js' && uglifyjs assets/scripts/main.js -o dist/public/js/main.min.js",
+    "minify:css": "echo '=> minify:css' && cleancss assets/css/main.css -o dist/public/css/main.min.css -o dist/public/css/main.min.css",
+    "build": "echo '=> building' && npm run test -s && npm run build-css -s && npm run minify:js -s && npm run minify:css -s",
+    "build-css": "echo '=> SCSS Compiling' && node-sass --include-path scss assets/scss/main.scss assets/css/main.css",
+    "pretest": "npm run lint -s",
+    "watch-scss": "nodemon -e scss -x \"npm run build-css\"",
+    "watch-minify": "watch 'npm run minify:js -s && npm run minify:css -s' assets/scripts/ assets/css/"
+  },
+  "author": "SitePoint",
+  "license": "ISC"
+}
